@@ -23,27 +23,25 @@ class AddCarScreen extends StatelessWidget {
           return SafeArea(
               child: Scaffold(
                   resizeToAvoidBottomInset: false,
-                  appBar: const CustomAppBar(title:'Add Car',
+                  appBar: const CustomAppBar(
+                    title: 'Add Car',
                     isBackShown: true,
                     isDrawerIconShown: false,
-
                   ),
                   body: Form(
                     key: model.formKey,
                     child: SingleChildScrollView(
                       child: Column(
-
                         children: [
-
-                          SizedBox(height: 3.h,),
+                          SizedBox(
+                            height: 3.h,
+                          ),
                           Center(
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-
-                                //controller: model.linkC,
+                                controller: model.vehiclecontroller,
                                 hintText: 'Vehicle Number',
-
                                 validator: validateNormalField,
                               ),
                             ),
@@ -52,12 +50,9 @@ class AddCarScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-                                controller: model.oldController,
-                                obscureText: model.isShowPassword,
+                                controller: model.makerController,
                                 hintText: 'Maker',
-
                                 maxLines: 1,
-
                                 validator: validateNormalField,
                               ),
                             ),
@@ -66,12 +61,9 @@ class AddCarScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-                                controller: model.passwordController,
-                                obscureText: model.isShowPassword,
+                                controller: model.manafactureController,
                                 hintText: 'Manafacture Year',
-
                                 maxLines: 1,
-
                                 validator: validateNormalField,
                               ),
                             ),
@@ -80,12 +72,9 @@ class AddCarScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-                                controller: model.confirmController,
-                                obscureText: model.isShowPassword,
+                                controller: model.modelController,
                                 hintText: 'Model',
-
                                 maxLines: 1,
-
                                 validator: validateNormalField,
                               ),
                             ),
@@ -94,12 +83,9 @@ class AddCarScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-                                controller: model.confirmController,
-                                obscureText: model.isShowPassword,
+                                controller: model.engineController,
                                 hintText: 'Engine Number',
-
                                 maxLines: 1,
-
                                 validator: validateNormalField,
                               ),
                             ),
@@ -108,17 +94,16 @@ class AddCarScreen extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.all(6.0),
                               child: DefaultTextField(
-                                controller: model.confirmController,
-                                obscureText: model.isShowPassword,
+                                controller: model.vinController,
                                 hintText: 'VIN',
-
                                 maxLines: 1,
-
                                 validator: validateNormalField,
                               ),
                             ),
                           ),
-                          SizedBox(height: 6.h,),
+                          SizedBox(
+                            height: 6.h,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
@@ -127,10 +112,11 @@ class AddCarScreen extends StatelessWidget {
                                 height: 9.h,
                                 child: DefaultButton(
                                   onTap: () {
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                                    Navigator.pushReplacement(context,
+                                        MaterialPageRoute(builder: (context) {
                                       return AllCarScreen();
                                     }));
-                                      },
+                                  },
                                   text: 'Add',
                                 ),
                               ),
@@ -138,23 +124,16 @@ class AddCarScreen extends StatelessWidget {
                                 width: 40.w,
                                 height: 9.h,
                                 child: DefaultButton(
-                                  onTap: () {
-
-                                  },
+                                  onTap: () {},
                                   text: 'Cancel',
                                 ),
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     ),
-                  )
-
-
-
-              ));
+                  )));
         },
       ),
     );
